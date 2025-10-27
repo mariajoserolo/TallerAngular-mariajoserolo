@@ -1,5 +1,31 @@
-<div class="container-fluid">
-  <div class="row">
-    
+<h1 id="encabezado">TV Series</h1>
+<div class="container mt-4">
+  <div class="col-md-8">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Channel</th>
+        <th scope="col">Seasons</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of series">
+          <td>
+            <dd>{{ c.id }}</dd>
+          </td>
+          <td>
+            <dd>{{ c.name }}</dd>
+          </td>
+          <td>
+            <dd>{{ c.channel }}</dd>
+          </td>
+          <td>
+            <dd>{{ c.seasons }}</dd>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
