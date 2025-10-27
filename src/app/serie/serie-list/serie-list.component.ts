@@ -19,7 +19,17 @@ export class SerieListComponent implements OnInit {
   getSeries(): void{
     this.serieService.getSeries().subscribe((series: Serie[]) => {
       this.series = series;
+      this.seasonsAverage = this.seasonsAverageCalculate(series);
     })
+  }
+
+  seasonsAverageCalculate(series: Serie[]){
+    let sumaTotalSeasons: number = 0;
+    const totalSeries: number = series.length;
+    series.forEach((serie) => sumaTotalSeasons = sumaTotalSeasons + serie.seasons);
+    let seasonsAverage: number = 0;
+    seasonsAverage = sumaTotalSeasons / totalSeries;
+    return seasonsAverage;
   }
 
   ngOnInit() {
